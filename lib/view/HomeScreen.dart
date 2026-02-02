@@ -43,7 +43,13 @@ class _HomeState extends State<Home>{
               context, PedidoScreen.routeName,
             );
             if (!mounted) return;
-            setState(() => widget.viewModel.addPedido(pedidofuture));
+            setState(() {
+              widget.viewModel.addPedido(pedidofuture);
+              
+            });
+            
+
+            
           }, 
           child: Text("Añadir producto")
         )

@@ -32,27 +32,35 @@ class ProductoScreen extends StatelessWidget{
                           margin: EdgeInsets.all(8),
                           child: Text("${producto.nombre}, ${producto.precio}"),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            if (productos.contains(producto)){
-                              productos.forEach((element) {
-                                if (element == producto) element.cantidad++;
-                              },);
-                            }
-                            else{
-                              productos.add(producto);
-                            }
-                          }, 
-                        child: Text("+")),
-                        ElevatedButton(
-                          onPressed: () {
-                            if (productos.contains(producto)){
-                              if (producto.cantidad > 0){
-                                producto.cantidad--;
+                        Tooltip(
+                          message: 'Añadir producto',
+                          child: ElevatedButton(
+                            onPressed: () {
+                              if (productos.contains(producto)){
+                                productos.forEach((element) {
+                                  if (element == producto) element.cantidad++;
+                                },);
                               }
-                            }
-                          }, 
-                        child: Text("-"))
+                              else{
+                                productos.add(producto);
+                              }
+                            }, 
+                            child: Text("+")
+                          ),
+                        ),
+                        Tooltip(
+                          message: "Quitar producto",
+                          child: ElevatedButton(
+                            onPressed: () {
+                              if (productos.contains(producto)){
+                                if (producto.cantidad > 0){
+                                  producto.cantidad--;
+                                }
+                              }
+                            }, 
+                            child: Text("-", )
+                          )
+                        )
                       ],
                     );
                   }

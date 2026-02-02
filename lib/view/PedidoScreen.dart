@@ -75,7 +75,7 @@ class _PedidoScreen extends State<PedidoScreen>{
                 }
               },
             ),
-            /// Botón para añadir productos al pedido, resultado de navegar a la pantalla de selección de productos. Al volver, se añaden los productos seleccionados 
+            /// Botón para añadir productos al pedido resultado de navegar a la pantalla de selección de productos. Al volver, se añaden los productos seleccionados 
             /// al pedido actual atendiendo a la gestión del estado.
             ElevatedButton(onPressed: ()async {
               final producto = await Navigator.pushNamed<List<Producto>?>(
@@ -90,7 +90,11 @@ class _PedidoScreen extends State<PedidoScreen>{
                   auxiliar.addAll(producto);
                   nuevoPedido.productos = auxiliar;
                 });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Productos añadidos al pedido')),
+                );
               }
+              
             }, 
             child: Text("Añadir productos al pedido")),
             ElevatedButton(
@@ -101,6 +105,9 @@ class _PedidoScreen extends State<PedidoScreen>{
                 else{
                   if (id != 0){
                     nuevoPedido.id = id;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Pedido añadido: Mesa ${nuevoPedido.id}')),
+                    );
                     Navigator.pop(context, nuevoPedido);
                   }
                   else{
@@ -118,6 +125,7 @@ class _PedidoScreen extends State<PedidoScreen>{
                     ),);
                   }
                 }
+                
               },
               child: Text('Guardar pedido'),
             ),

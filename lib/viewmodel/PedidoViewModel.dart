@@ -33,10 +33,11 @@ class PedidoViewModel extends ChangeNotifier {
   List<Pedido> get pedidos => _pedidos;
 
   
-
+  /// Añade un nuevo pedido a la lista de pedidos.
   void addPedido(Pedido? p){
     if (p == null) return;
     _pedidos.add(p);
+    notifyListeners();
   }
 
 }
