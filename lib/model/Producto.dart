@@ -5,9 +5,9 @@ class Producto {
 
   Producto(this.nombre, this.precio, this.cantidad);
   
+  /// Convierte el objeto [Producto] a [String].
   @override
   String toString() {
-    // TODO: implement toString
     return "$nombre, Precio $precio, Cantidad $cantidad";
   }
 }

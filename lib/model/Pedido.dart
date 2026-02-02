@@ -1,5 +1,6 @@
 import 'package:t4_1/model/Producto.dart';
 
+/// Modelo que representa un pedido, que contiene una lista de [Producto] y calcula el precio total del pedido.
 class Pedido {
   int id;
   List<Producto> productos = List.empty(growable: true);
@@ -15,6 +16,7 @@ class Pedido {
     actualizarTotal();
   }
 
+/// Actualiza el precio total del pedido sumando el precio de cada producto multiplicado por su cantidad.
   void actualizarTotal(){
     _precioTotal = 0;
     for (var producto in productos){
@@ -22,10 +24,12 @@ class Pedido {
     }
   }
 
+/// Devuelve el número de productos en el pedido.
   int numeroProductos(){
     return productos.length;
   }
 
+/// Añade un [Producto] al pedido. Si el producto ya existe en el pedido, incrementa su cantidad.
   void addProducto(Producto p){
     if (!productos.contains(p)){
       productos.add(p);
