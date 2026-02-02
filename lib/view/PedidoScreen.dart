@@ -4,6 +4,8 @@ import 'package:t4_1/model/Producto.dart';
 import 'package:t4_1/view/PedidoScreenDetalle.dart';
 import 'package:t4_1/view/ProductoScreen.dart';
 
+
+/// Pantalla para crear y gestionar un nuevo pedido. Permite añadir productos, ver el detalle del pedido y guardar o cancelar el pedido.
 class PedidoScreen extends StatefulWidget {
   static const routeName = '/pedido';
   const PedidoScreen({super.key});
@@ -18,7 +20,6 @@ class _PedidoScreen extends State<PedidoScreen>{
   @override
   void initState() {
     super.initState();
-    // ✅ Solo se inicializa una vez
     nuevoPedido = Pedido(0, []);
     id = 0;
   }
@@ -74,6 +75,8 @@ class _PedidoScreen extends State<PedidoScreen>{
                 }
               },
             ),
+            /// Botón para añadir productos al pedido, resultado de navegar a la pantalla de selección de productos. Al volver, se añaden los productos seleccionados 
+            /// al pedido actual atendiendo a la gestión del estado.
             ElevatedButton(onPressed: ()async {
               final producto = await Navigator.pushNamed<List<Producto>?>(
                 context, ProductoScreen.routeName,

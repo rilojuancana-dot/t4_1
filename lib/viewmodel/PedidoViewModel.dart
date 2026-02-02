@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:t4_1/model/Pedido.dart';
 import 'package:t4_1/model/Producto.dart';
 
+
+/// Gestiona la lista de Pedidos, proporcionando métodos para acceder y modificar los datos y notificar a la vista sobre los cambios.
 class PedidoViewModel extends ChangeNotifier {
   final List<Pedido> _pedidos = [
       Pedido(1, [

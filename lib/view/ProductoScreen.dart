@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:t4_1/model/Producto.dart';
 
+
+/// Pantalla para seleccionar [Producto] y añadirlos a un [Pedido].
 class ProductoScreen extends StatelessWidget{
   static const routeName = '/producto';
 

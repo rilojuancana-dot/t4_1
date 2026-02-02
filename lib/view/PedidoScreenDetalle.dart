@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:t4_1/model/Pedido.dart';
 
+/// Pantalla que muestra el detalle de un [Pedido], incluyendo la lista de productos y el total del pedido.
 class Pedidoscreendetalle extends StatelessWidget{
   final Pedido pedido;
 

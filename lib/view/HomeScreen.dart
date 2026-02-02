@@ -3,6 +3,8 @@ import 'package:t4_1/model/Pedido.dart';
 import 'package:t4_1/view/PedidoScreen.dart';
 import 'package:t4_1/viewmodel/PedidoViewModel.dart';
 
+
+/// Pantalla principal que muestra la lista de pedidos y permite añadir nuevos pedidos. Esta pantalla interactúa con el PedidoViewModel para gestionar los datos.
 class Home extends StatefulWidget {
   static const routeName = '/';
   final PedidoViewModel viewModel;
