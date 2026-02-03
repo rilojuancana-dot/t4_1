@@ -26,7 +26,7 @@
 
 ## Windows
 ### Pasos de Despliegue:
-1. **Habilitar soporte Windows** - flutter config --enable-windows-desktop (cambiar `windows` por `linux` o `macos` si lo necesitamos)
+1. **Habilitar soporte Windows** - En la terminal de la máquina: `flutter config --enable-windows-desktop` (cambiar `windows` por `linux` o `macos` si lo necesitamos)
 2. **flutter build windows** - Generar ejecutable .exe con el comando bash `flutter build windows --release` (cambiar `windows` por `linux` o `macos` si lo necesitamos)
 3. **Pruebas en Windows** - Verificar funcionamiento local
 4. **Empaquetar con MSIX** - Formato moderno de instalación
