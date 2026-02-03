@@ -1,7 +1,5 @@
 # Guía de Despliegue - Aplicación T4_1
 
----
-
 ## Android
 ### Pasos de Despliegue:
 1. **Generar keystore** - Firma digital para autenticar la app
